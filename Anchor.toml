@@ -1,0 +1,22 @@
+[toolchain]
+package_manager = "pnpm"
+
+[features]
+resolution = true
+skip-lint = false
+
+[programs.localnet]
+hyphae = "EAz8WkyUbGqr3ewSLpk94GWEoiWsvMENE5zV7Tvh4d6E"
+
+[programs.devnet]
+hyphae = "EAz8WkyUbGqr3ewSLpk94GWEoiWsvMENE5zV7Tvh4d6E"
+
+[provider]
+cluster = "localnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+# The LiteSVM suite in programs/hyphae/tests loads target/deploy/hyphae.so: run after anchor build.
+test = "cargo test -p hyphae --tests"
+
+[hooks]

@@ -1,0 +1,32 @@
+{
+  "version": "1.3.0",
+  "community": "MYCEL",
+  "guidelines": "What earns points here. Real participation in the conversation, in your own words. Read the post, react to something specific in it, add an angle: an insight, a question, a comparison, a joke that lands, a technical note. One reply and one quote per raid, inside the window.\n\nContribution value. Points recognise useful participation and contribute to an epoch's community reward allocation; submitting a post does not itself earn points or guarantee a payout. Judge the substance of the contribution, not its ability to amplify a post. Give a useful explanation, relevant question, original perspective, or substantiated constructive criticism the same opportunity to earn as praise. Apply the same criteria regardless of whether the view is positive, negative, bullish, or bearish. Do not flag reasoned disagreement as off-topic or a guideline breach just because it challenges the project. Award no quality bonus for likes, reposts, views, follower counts, repeated coin mentions, or the number of submissions. Those metrics do not establish quality. Generic cheerleading remains low effort even when the author is a holder.\n\nWhat earns zero. \"lfg\", \"gm\", emoji-only, \"great project ser\", or reusable hype that would fit under any post. A real take on the post’s theme counts even when it does not quote the post. Copy-pasting another member's reply, or your own. Text that reads like an unedited AI draft. Anything off-topic or promotional for something else.\n\nPrice discussion is allowed, including speculation about MYCEL or another specific coin, when it explains a concrete factual basis and why that basis supports the scenario. The basis may be in the supplied target post or contribution; a separate link or a long analysis is not required. Frame forecasts as uncertain and make material assumptions clear. Mentioning a price, valuation, or numeric target is not by itself a guideline breach. Evaluate the reasoning and supporting context, not whether the prediction sounds bullish or bearish. Do not invent or assume evidence that is absent from the supplied material. A hedge such as \"could\" or \"not financial advice\" does not turn an unsupported target into grounded speculation.\n\nHolder participation. Members may truthfully disclose that they hold a coin and discuss their own holding decision or experience: \"I hold MYCEL\", \"I am still holding\", or \"I hold MYCEL because I want to see the product develop\". First-person ownership or choosing to keep holding is not a buy/hold instruction to someone else and is not a guideline breach by itself. Do not assume or invent an author's holdings when they are not supplied. Genuine holder enthusiasm is allowed; it still needs context and substance to earn quality points, and it does not excuse unsupported price hype or guaranteed gains.\n\nNever credit, whatever the effort: telling anyone to buy, ape, get in, or hold a specific coin; promising gains, \"easy money\", guaranteed returns, or a certain future price; or unsupported price/valuation hype such as \"we are going up to 100M easy\". An unsupported forecast about a specific coin is a guideline breach. General market opinion and grounded, uncertain price speculation are not breaches by themselves. Quality still depends on context fit, natural voice, and adding an angle; mentioning financial data does not automatically earn a high score.\n\nIndependent voice and transparency. Participants should contribute their own views and words, without prescribed praise or fabricated personal experience. A reward relationship must be disclosed clearly where applicable; being a holder and being eligible for contribution rewards are different interests. Do not penalise an honest reward disclosure as an advertisement, generic wording, or an AI-writing signal by itself. Assess the substantive contribution around it. Do not infer undisclosed payments, verified ownership, coordination, or duplicate activity from writing style alone; identify what the supplied evidence actually supports.\n\nHow grading works. An AI grades every contribution against this rubric and shows its reasoning. Below 60/100 pays nothing. A breach of the \"never\" list is 0. Strikes: first = warning, second = you lose this epoch's points, third = 30 days out of paid raids. Every strike shows you why. The community admin can correct any grade; corrections are public.",
+  "criteria": [
+    {
+      "key": "context_fit",
+      "weight": 0.35,
+      "label": "Specific to the post",
+      "description": "Engages the target post's actual point or theme. A concrete observation or a genuine on-theme take earns credit; merely naming the project or reusing generic hype does not. Relevant disagreement can fit the context as well as agreement."
+    },
+    {
+      "key": "own_voice",
+      "weight": 0.3,
+      "label": "Reads like a real person",
+      "description": "Natural crypto-Twitter voice, light imperfection allowed. No corporate rhythm, no AI-writing signals (pivotal, landscape, testament, underscores, 'Additionally', 'Furthermore', 'experts say', sterile positivity)."
+    },
+    {
+      "key": "value_angle",
+      "weight": 0.35,
+      "label": "Adds an angle",
+      "description": "Adds an insight, relevant question, comparison, playful take, technical note, useful explanation, or substantiated constructive criticism. Judge the value added to the conversation, not positivity, price direction, popularity, or promotional impact."
+    }
+  ],
+  "timing": {
+    "fullUntil": 360,
+    "zeroAt": 2880
+  },
+  "stakeWeight": "none",
+  "minHoldUnits": "100000000000",
+  "proposalAcceptThreshold": 70
+}

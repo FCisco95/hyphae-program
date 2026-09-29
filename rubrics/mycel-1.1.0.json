@@ -1,0 +1,32 @@
+{
+  "version": "1.1.0",
+  "community": "MYCEL",
+  "guidelines": "What earns points here. Real participation in the conversation, in your own words. Read the post, react to something specific in it, add an angle: an insight, a question, a comparison, a joke that lands, a technical note. One reply and one quote per raid, inside the window.\n\nWhat earns zero. \"lfg\", \"gm\", emoji-only, \"great project ser\", or any reply that would fit under any post. Copy-pasting another member's reply, or your own. Text that reads like an unedited AI draft. Anything off-topic or promotional for something else.\n\nNever, whatever the effort (this is the law, not taste), about MYCEL or any specific coin: telling anyone to buy, ape, get in, or hold it. Saying where its price is going or naming targets. Promising gains, \"easy money\", \"10x\", \"guaranteed\". Claiming returns. The line is naming a coin, or talking about the coin of the post you are replying to. General market talk is opinion, not a breach: \"holding usually beats trading\", \"long-term doesn’t have to mean years\", \"most launches fade in a week\". Safe framings: a personal view (\"I like how they handled…\"), an observation (\"interesting that…\"), curiosity (\"wonder how this performs when…\"), a comparison (\"feels more practical than most launches lately\").\n\nHow grading works. An AI grades every contribution against this rubric and shows its reasoning. Below 60/100 pays nothing. A breach of the \"never\" list is 0. Strikes: first = warning, second = you lose this epoch's points, third = 30 days out of paid raids. Every strike shows you why. The community admin can correct any grade; corrections are public.",
+  "criteria": [
+    {
+      "key": "context_fit",
+      "weight": 0.35,
+      "label": "Specific to the post",
+      "description": "Reacts to something concrete in the target post. Not reusable hype that fits any post."
+    },
+    {
+      "key": "own_voice",
+      "weight": 0.3,
+      "label": "Reads like a real person",
+      "description": "Natural crypto-Twitter voice, light imperfection allowed. No corporate rhythm, no AI-writing signals (pivotal, landscape, testament, underscores, 'Additionally', 'Furthermore', 'experts say', sterile positivity)."
+    },
+    {
+      "key": "value_angle",
+      "weight": 0.35,
+      "label": "Adds an angle",
+      "description": "An insight, a real question, a comparison, a playful take, a technical note. Something the thread did not have before."
+    }
+  ],
+  "timing": {
+    "fullUntil": 360,
+    "zeroAt": 2880
+  },
+  "stakeWeight": "none",
+  "minHoldUnits": "100000000000",
+  "proposalAcceptThreshold": 70
+}
