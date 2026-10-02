@@ -12,6 +12,7 @@ This repository holds the part you have to trust with money: **the Solana progra
 | Part | State |
 |---|---|
 | Program (`programs/hyphae`): per-community vaults, epoch roots, one-time claims | Deployed on **devnet** only, at `EAz8WkyUbGqr3ewSLpk94GWEoiWsvMENE5zV7Tvh4d6E`. Not on mainnet. |
+| Read API v1 | Live at `https://hyphae-api.fly.dev/v1`, including wallet claims, [`/docs`](https://hyphae-api.fly.dev/docs) and [`/v1/openapi.json`](https://hyphae-api.fly.dev/v1/openapi.json). |
 | Rubrics (`rubrics/`) | MYCEL 1.2.0 scores live; 1.3.0 is a candidate, not applied. |
 
 ## Verify the build
@@ -55,7 +56,7 @@ Hyphae's admin key on a Ledger signs the community, the deposit and the publicat
 
 ## Read API
 
-Public, read-only, unauthenticated JSON at `https://hyphae-api.fly.dev/v1`. Production serves `/v1/communities/{mint}` and `/v1/communities/{mint}/epochs/{index}` today; the wallet-claims route below, the reference at `/docs` and the OpenAPI 3.1 document at `/v1/openapi.json` are built and tested, and not deployed yet.
+Public, read-only, unauthenticated JSON at `https://hyphae-api.fly.dev/v1`. Every v1 route is live, including a wallet's claims. The reference is at [`/docs`](https://hyphae-api.fly.dev/docs), and the OpenAPI 3.1 document at [`/v1/openapi.json`](https://hyphae-api.fly.dev/v1/openapi.json). A wallet with no leaf in a published epoch gets `total_claims: 0` and an empty `claims` list.
 
 - A section the API cannot confirm is `{ "status": "unavailable", "reason": … }`, never a zero.
 - Settlement and payments are read against Solana. A transaction is shown only when the chain proves it created the account it names.
