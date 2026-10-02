@@ -11,7 +11,7 @@ This repository holds the part you have to trust with money: **the Solana progra
 
 | Part | State |
 |---|---|
-| Program (`programs/hyphae`): per-community vaults, epoch roots, one-time claims | Deployed on **devnet** only, at `EAz8WkyUbGqr3ewSLpk94GWEoiWsvMENE5zV7Tvh4d6E`. Not on mainnet. |
+| Program (`programs/hyphae`): per-community vaults, epoch roots, one-time claims | Deployed on **mainnet** and **devnet** at `EAz8WkyUbGqr3ewSLpk94GWEoiWsvMENE5zV7Tvh4d6E`. Mainnet upgrade authority is the Ledger `2kz1Zq8UDm9Hq6XwPW6cViQZe7aySEBGk1gLWN8gofjR`; its on-chain hash matches the verified build below. No community, vault or payout exists on mainnet yet. |
 | Read API v1 | Live at `https://hyphae-api.fly.dev/v1`, including wallet claims, [`/docs`](https://hyphae-api.fly.dev/docs) and [`/v1/openapi.json`](https://hyphae-api.fly.dev/v1/openapi.json). |
 | Rubrics (`rubrics/`) | MYCEL 1.2.0 scores live; 1.3.0 is a candidate, not applied. |
 
@@ -25,12 +25,13 @@ anchor build --verifiable --ignore-keys
 sha256sum ../../target/verifiable/hyphae.so
 solana-verify get-executable-hash ../../target/verifiable/hyphae.so
 solana-verify get-program-hash -u devnet EAz8WkyUbGqr3ewSLpk94GWEoiWsvMENE5zV7Tvh4d6E
+solana-verify get-program-hash -u mainnet-beta EAz8WkyUbGqr3ewSLpk94GWEoiWsvMENE5zV7Tvh4d6E
 ```
 
 | What | Hash |
 |---|---|
 | `hyphae.so` sha256 (229,432 bytes) | `cb4ffdd8074442310f7953b5233a4c2df4eaf8c3f7627cdf259efb84ebf98d79` |
-| `solana-verify` executable hash, and the devnet program's on-chain hash | `7e902d1b5f8d8c49dfd199ec2e7bf44139b56524d98408f1556e14f4e9ab43ac` |
+| `solana-verify` executable hash, and the mainnet and devnet programs' on-chain hash | `7e902d1b5f8d8c49dfd199ec2e7bf44139b56524d98408f1556e14f4e9ab43ac` |
 
 `--ignore-keys`: a fresh clone has no program keypair, and `declare_id!` already pins the address. `solana-verify` hashes the program without its trailing zero padding, so its hash is the one to compare with the chain.
 
@@ -106,7 +107,7 @@ const [vault] = await getProgramDerivedAddress({ programAddress: HYPHAE, seeds: 
 
 - SOL leaves the vault only through the program: each published epoch sends the 3% Hyphae fee to the recipient fixed when the community was created, and each claim pays one leaf of a published root, once.
 - An epoch can only allocate SOL that no earlier epoch has allocated and nobody has claimed yet.
-- The program is on devnet only. Check its address on the network you use before sending anything.
+- The program is on mainnet and devnet at the same address. A vault exists only on a network where its community was created. Check that the community exists on the network you use before sending anything.
 
 ## Custody during the pilot
 
