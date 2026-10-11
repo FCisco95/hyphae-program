@@ -2,18 +2,24 @@
 
 Hyphae is a proof-of-contribution layer for token communities. Members do real work for a community, an AI scores it against public guidelines and shows its reasoning, and each epoch's payouts are committed to Solana as a merkle root, next to the hash of the epoch's full audit record. Each community has a SOL vault; a contributor claims their share from it with a merkle proof, signed by their own wallet, once.
 
-This repository holds the part you have to trust with money: **the Solana program**, and **the rubrics** every contribution is graded against. Both are public so anyone can rebuild the program and check it against the chain, and read the rules before doing the work. The rest of Hyphae (the Telegram bot, scoring, the read API and the site) is developed privately.
+This repository holds the part you have to trust with money: **the Solana program**, and **the rubrics** every contribution is graded against. Both are public so anyone can rebuild the program and check it against the chain, and read the rules before doing the work. The [application repository](https://github.com/FCisco95/hyphae), including the Telegram bot, scoring, read API and site, is also public under BUSL 1.1.
 
 - Site: **[hyphae-delta.vercel.app](https://hyphae-delta.vercel.app)**
 - Built solo for [Colosseum's Crypto World's Fair](https://colosseum.com/worldsfair) (2026-09-14 → 2026-10-12).
 
 ## Status
 
-| Part | State |
+**October 10, 2026: epoch 2 paid on Solana mainnet.** All four payees claimed **1,238,881,509 lamports**, with **0 unclaimed**; three of the four payees are non-founder community members. [Finalized payout and claim receipts](docs/2026-10-10-mainnet-payout.md#finalized-transactions).
+
+| Part | State and evidence |
 |---|---|
-| Program (`programs/hyphae`): per-community vaults, epoch roots, one-time claims | Deployed on **mainnet** and **devnet** at `EAz8WkyUbGqr3ewSLpk94GWEoiWsvMENE5zV7Tvh4d6E`. Mainnet upgrade authority is the Ledger `2kz1Zq8UDm9Hq6XwPW6cViQZe7aySEBGk1gLWN8gofjR`; its on-chain hash matches the verified build below. No community, vault or payout exists on mainnet yet. |
-| Read API v1 | Live at `https://hyphae-api.fly.dev/v1`, including wallet claims, [`/docs`](https://hyphae-api.fly.dev/docs) and [`/v1/openapi.json`](https://hyphae-api.fly.dev/v1/openapi.json). |
-| Rubrics (`rubrics/`) | MYCEL 1.2.0 scores live; 1.3.0 is a candidate, not applied. |
+| Solana program: vaults, epoch roots, one-time claims | Mainnet and devnet program `EAz8WkyUbGqr3ewSLpk94GWEoiWsvMENE5zV7Tvh4d6E`. Mainnet upgrade authority is the Ledger `2kz1Zq8UDm9Hq6XwPW6cViQZe7aySEBGk1gLWN8gofjR`; the [October 11 mainnet hash re-read](docs/2026-10-10-mainnet-payout.md#program-hash-re-read-october-11) matches the verified build. |
+| MYCEL community and vault | Mainnet community [HRkBN4…XbRX](https://solscan.io/account/HRkBN4sX7NyPEfa4SfRoTsP1dynmPDLMYbY7qLa4XbRX) and vault [AC3zkG…oG86K](https://solscan.io/account/AC3zkGQ9abJs6sssaY5nDX8Qjv2UM19r4JYLgcHoG86K), created in C16 [aensGhPg…aQJSghNX](https://explorer.solana.com/tx/aensGhPgR8XBz5unAugUd9bJai3WbyUoJFwCLKmGn5kqUjsTNYNSQXR9oraAx9FitJac74tK9fYyCTBaQJSghNX); funded with 1.5 SOL in C18 [5spBxwDa…i1c7rjtj](https://explorer.solana.com/tx/5spBxwDa9jbMbvZup3bR1aU5t2HVoYb24U2JLvX4dx8U6GJehDr1i1pgepxqTtodJf2ykRTP95dHGMBqi1c7rjtj). |
+| Epoch 2 payout | C20 [4qhKtnsV…Xop6EnLm](https://explorer.solana.com/tx/4qhKtnsVD78xpvRPdi7TQ1fcF86FjiueCFZNq6a11yfSQ7Q4UeXboGaRtzTDtyMnFbDtVywHGzgytrXqXop6EnLm) committed the root and audit hash, sent the 0.045 SOL Treasury fee and allocated 1,238,881,509 lamports. [All four claim receipts](docs/2026-10-10-mainnet-payout.md#finalized-transactions) confirm 4/4 paid, 0 unclaimed; [live settlement](https://hyphae-delta.vercel.app/c/HudkzEWpcUnTYFZMMcbNdwk1S5Am26J2SyEh4NfFworg/e/2). |
+| Published IDL | [2sS66trK…aBj9ArgZ](https://explorer.solana.com/tx/2sS66trKN2myWW4cKSX2Yie3K2G9dDhqgE84aWvr9aZrm5R3hDpCmewFxN8GXzAj8kxYtYrNE8hw2F9haBj9ArgZ); [canonical metadata](https://solscan.io/account/zxj1hrV2pYRuHC65TvUVsRssMUvzu8bZ7YKWkPTrc9d). Solscan decodes the [claim receipts](docs/2026-10-10-mainnet-payout.md#finalized-transactions). |
+| Telegram bot, AI scoring and public audit site | Live for MYCEL; [epoch 2 audit](https://hyphae-delta.vercel.app/c/HudkzEWpcUnTYFZMMcbNdwk1S5Am26J2SyEh4NfFworg/e/2) records 33 contributions from 9 members and the mainnet settlement. |
+| Read API v1 | Live, including [epoch-2 settlement](https://hyphae-api.fly.dev/v1/communities/HudkzEWpcUnTYFZMMcbNdwk1S5Am26J2SyEh4NfFworg/epochs/2), wallet claims, [`/docs`](https://hyphae-api.fly.dev/docs) and [`/v1/openapi.json`](https://hyphae-api.fly.dev/v1/openapi.json). |
+| Rubrics | [MYCEL 1.2.0](rubrics/mycel-1.2.0.json) scores live ([epoch config](https://hyphae-api.fly.dev/v1/communities/HudkzEWpcUnTYFZMMcbNdwk1S5Am26J2SyEh4NfFworg/epochs/2)); 1.3.0 is a candidate, not applied. |
 
 ## Verify the build
 
@@ -41,7 +47,7 @@ The program's tests run on LiteSVM against the built program:
 anchor build && cargo test -p hyphae --tests
 ```
 
-They read the shared commitment vectors in `packages/core/src/test-vectors/h-contract-v1.json`, which the private TypeScript implementation also checks itself against.
+They read the shared commitment vectors in `packages/core/src/test-vectors/h-contract-v1.json`, which the public application's TypeScript implementation also checks itself against.
 
 ## A full run on devnet
 
